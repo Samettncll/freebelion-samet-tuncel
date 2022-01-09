@@ -1,0 +1,16 @@
+extends ./Partials/_base
+block content
+    .container.my-5
+        .row
+            .col-md-6.offset-md-3
+                each article in articles
+                    .card(style='width: 18rem;')
+                    h1 #{article.title}
+                    img.card-img-top(src=`img/${article.image}` width="100" height="300" alt='Card image cap')
+                    .card-body
+                        p.card-text
+                            #{article.description}
+                        p.card-text #{article.Category.name}
+                        form(action="/detail", method="get")
+                            input(type="hidden", name="id" value=`${article.id}`)
+                            a(href=`/detail/${article.id}`).btn.btn-primary Detay

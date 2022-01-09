@@ -1,0 +1,12 @@
+extends ./AdminPartials/_base
+block content
+    .container.my-4
+        .row
+            .col-md-6.offset.md-4
+                p.display-4.my-3 Category Form
+                br
+                form(action="/admin/category", method="post")
+                    .form-group
+                        label Name
+                        input.form-control(type="text" name="name")
+                    button.btn.btn-primary(type="submit") Save

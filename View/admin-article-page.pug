@@ -1,0 +1,22 @@
+extends ./AdminPartials/_base
+block content
+    .container.my-4
+        .row
+            .col-md-6.offset.md-4
+                p.display-4.my-3 Article Form
+                br
+                form(action="/admin/article", method="post")
+                    .form-group
+                        label Title 
+                        input.form-control(type="text" name="title")
+                    .form-group
+                        label Image 
+                        input.form-control(type="text" name="image")
+                    .form-group
+                        label Description 
+                        textarea.form-control(type="text" name="description")
+                    .form-group
+                        select.form-select(aria-label='Default select example' name="category")
+                            each category in categories
+                                option(value=`${category.name}`) #{category.name} 
+                    button.btn.btn-primary(type="submit") Save

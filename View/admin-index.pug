@@ -1,0 +1,33 @@
+extends ./AdminPartials/_base
+block content
+    .container.my-4
+        .row
+            .col-md-4.offset-md-4
+                p.display.text-center Categories
+                table.table
+                    thead
+                        th Id
+                        th Name
+                    tbody
+                        each category in categories
+                            tr
+                                td #{category.id}
+                                td #{category.name}      
+            .col-md-4.offset-md-4
+                p.display.text-center Article 
+                table.table
+                    thead
+                        th Id
+                        th Title 
+                        th Image
+                        th Description
+                        th Category
+                    tbody
+                        each article in articles 
+                            tr
+                                td #{article.id}
+                                td #{article.title}
+                                td #{article.image}
+                                td #{article.description}
+                                td #{article.Category.name}
+                        

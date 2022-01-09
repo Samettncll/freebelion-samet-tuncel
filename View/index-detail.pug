@@ -1,0 +1,11 @@
+extends ./Partials/_base
+block content
+    .container
+        .row
+            .col-md-6.offset-md-2
+               .card(style="width: 20rem;")
+               h1 #{article[0].title}
+               img.card-img-top(src=`/img/${article[0].image}`)
+               .card-body
+                    p.card-text #{article[0].description}
+                    p.card-text #{article[0].Category.name}
